@@ -1,0 +1,770 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+
+}
+body {
+  background-color: #F5F6F8;
+  display: flex;
+  justify-content: center;
+}
+.app-wrapper {
+  width: 100%;
+  max-height: 100vh;
+  min-width: 33rem;
+  display: flex;
+}
+
+/*---------------------------------------------NAV STYLING --------------------------------*/
+
+.app-wrapper .main-nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  max-height: 100%;
+  background-color: white;
+  /* box-shadow: 6px 0px 18px black; */
+  display: none;
+} 
+.main-nav-wrapper .logo-container{
+  width: 100%;
+  height: 8vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.logo-container p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #109CF1;
+}
+.main-nav-wrapper .top-and-bottom-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-top: solid 1px #EBEFF2;
+}
+.top-and-bottom-container .side-top{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-bottom: solid 1px #ebeff2;
+}
+.top-and-bottom-container .side-bottom {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.side-top .info-container{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+
+}
+.side-top .info-container img{
+  border-radius: 50%;
+  width: 100%;
+}
+.side-top .info-container .avatar-image-container{
+  width: 25%;
+}
+.side-top .info-container .avatar-name{
+  width: 75%;
+}
+.avatar-name h3{
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.side-top .nav-container{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-container div{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container div img{
+  width: 2rem;
+  margin-left: 3rem;
+  margin-right: 2rem;
+}
+.nav-container div p{
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #334D6E;
+}
+.nav-container div .selected{
+  color: #109CF1;
+
+}
+.side-bottom .settings-container{
+  position: relative;
+  width: 100%;
+  padding: 3rem;
+}
+.settings-container div{
+  position: absolute;
+  display: flex;
+  align-items: center;
+}.settings-container div img{
+  margin-right: 2rem;
+}
+.settings-container div:first-child{
+  top: 10%;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #334D6E;
+}
+.settings-container div:last-child{
+  bottom: 10%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #90A0B7;
+}
+
+
+/*------------------------------------------MAIN TASK CONTAINER-----------------------------*/
+.app-wrapper .main-tasks-wrapper {
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F5F6F8;
+}
+.tasks-graphs--container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-height: 90vh;
+}
+.main-tasks-container {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.main-graphs-container {
+  width: 100%;
+  max-height: 90%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-search-container {
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 0.1rem;
+}
+
+/*--------------------------------main search container elements--------------*/
+
+.main-search-container .search-container {
+  width: 95%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+.main-tasks-container .completed-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  background-color: white;
+}
+.main-tasks-container .animation-bar-container {
+  width: 90%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-tasks-container .not-colored-bar {
+  width: 100%;
+  margin-top: 1.6rem;
+  height: 0.4rem;
+  background-color: #EBEFF2;
+  border-radius: 3px;
+}
+.not-colored-bar .colored-bar {
+  width: 80%;
+  height: 100%;
+  background-color: #2ed47a;
+  border-radius: 3px;
+}
+.main-tasks-container .calendar-container {
+  width: 90%;
+  padding-bottom: 1.5rem;
+  background-color: white;
+}
+
+.search-container input {
+  width: 80%;
+  margin-left: 1.5rem;
+  border: none;
+}
+.search-container input::placeholder {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #90a0b7;
+}
+.search-container .search-icon {
+  width: 14.6px;
+  height: 14.6px;
+  background-image: url(./ASSETS/icons/Vector.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.search-container .bell-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 2.6rem;
+  background-image: url(./ASSETS/icons/notifications.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.completed-container > p {
+  left: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #334d6e;
+}
+.completed-container .filter-container {
+  right: 2rem;
+}
+.calendar-container .text-box {
+  width: 90%;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.calendar-container .calendar-item {
+  /* display: flex; */
+  flex-direction: column;
+  margin-top: 2rem;
+  display: none;
+}
+.calendar-item .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar-item .day ,
+.calendar-item .date  {
+  width: 2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.calendar-item .day{
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #334D6E;
+  opacity: 0.5;
+}
+.calendar-item .date{
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #4C5862;
+}
+.calendar-item .row .date.current p, .calendar-container .row .day.current p{
+  color: #109CF1;
+}
+
+.side-top .nav-container div p:hover{
+  cursor: pointer;
+  color: #109CF1;
+}
+.side-bottom p:hover{
+  cursor: pointer;
+  color: #109CF1;
+}
+
+
+
+/*main task container elements*/
+
+.main-tasks-container .cards-container {
+  width: 90%;
+  background-color: white;
+  flex-grow: 1;
+  /* max-height: 100%; */
+}
+.main-tasks-container .card {
+  margin-bottom: 2.4rem;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+}
+
+.cards-container .top-card {
+  margin-top: 1.3rem;
+}
+
+.card div {
+  display: flex;
+}
+.card .left {
+  width: 70%;
+}
+.card .righ {
+  width: 30%;
+}
+
+.card h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+  color: #323c47;
+}
+.card .title-container p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #90a0b7;
+}
+.card .button-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.card .button-container button {
+  width: 8.4rem;
+  height: 2.2rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  color: white;
+  border: none;
+}
+.card .person-container .id-container {
+  width: 60%;
+}
+.card .person-container .button-container {
+  width: 40%;
+}
+.card .button-container .green {
+  background-color: #2ed47a;
+}
+.card .button-container .red {
+  background-color: #f7685b;
+}
+.card .button-container .garbage {
+  margin-right: 1.8rem;
+  background-image: url(./ASSETS/icons/garbage-icon.svg);
+  width: 9.33px;
+  height: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+.card .button-container .edit{
+  margin-right: 1.8rem;
+  background-image: url(./ASSETS/icons/edit.svg);
+  width: 9.33px;
+  height: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+.card .due-date-container {
+  margin-top: 0.5rem;
+}
+.card .due-date-container p:first-child {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  opacity: 0.5;
+  color: #4c5862;
+}
+.card .due-date-container p:last-child {
+  margin-left: 0.5rem;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: #4c5862;
+}
+.card .person-container {
+  margin-top: 1.8rem;
+}
+.card .person-container .id-container {
+  display: flex;
+  align-items: center;
+}
+.card .person-container .id-container p {
+  margin-left: 1rem;
+}
+
+.card .person-container .george {
+  background-image: url(./ASSETS/images/image\ 3.png);
+  width: 2.4rem;
+  height: 2.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.card .person-container .lindsey {
+  background-image: url(./ASSETS/images/image.jpg);
+  width: 2.4rem;
+  height: 2.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.card .person-container .rebecca {
+  background-image: url(./ASSETS/images/image\ 2.png);
+  width: 2.4rem;
+  height: 2.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.card .person-container p {
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  color: #707683;
+}
+
+.main-tasks-container .show-more-item{
+  margin-bottom: 3rem;
+}
+.show-more-item p{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #109CF1;
+}
+
+/* Main Graphs container Elements */
+
+.main-graphs-container .deals-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+}
+.main-graphs-container .graphs-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+}
+
+.main-graphs-container .graph-item-container {
+  width: 100%;
+  margin-top: 0.2rem;
+  padding: 1.5rem;
+}
+
+/* FILTERS */
+
+.deals-filter-container,
+.graphs-filter-container {
+  display: flex;
+  width: 100%;
+  padding-bottom: 1.7rem;
+  border-bottom: solid 0.1rem #ebeff2;
+}
+.main-graphs-container h3 {
+  width: 30%;
+}
+.main-graphs-container .filter {
+  width: 70%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #6a707e;
+}
+.filter span {
+  margin-left: 0.3rem;
+  color: #3388ff;
+}
+.filter .filter-icon {
+  background-image: url(./ASSETS/icons/Polygon.svg);
+  width: 0.7rem;
+  height: 0.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Graphs*/
+.graph-item-container .graph-image {
+  display: flex;
+  justify-content: center;
+}
+.graph-item-container .percentage-graph-img {
+  display: flex;
+  justify-content: center;
+}
+
+.graph-item-container .graph-image img {
+  width: 100%;
+  max-height: 100%;
+  /* max-width: 50rem; */
+}
+.graph-item-container .percentage-graph-img img {
+  width: 100%;
+  max-height: 100%;
+  /* max-width: 30rem; */
+}
+.graph-item-container.percentage {
+  display: flex;
+  max-width: 70rem;
+  flex-grow: 1;
+}
+.graph-legend-container{
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  padding-left: 1rem;
+}
+.graph-legend-container p{
+  font-size: 1rem;
+  font-weight: 400;
+  color: #192A3E;
+  margin-left: 1rem;
+} 
+
+.graph-item-container.deals{
+  flex-grow: 1;
+  width: 100%;
+  max-height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.graph-item-container.percentage .percentage-graph-img {
+  width: 60%;
+}
+.graph-item-container.percentage .legend-container {
+  width: 40%;
+}
+.legend-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.legend-container .ul-container {
+  width: 40%;
+  min-width: 40%;
+}
+.legend-container ul {
+  list-style: none;
+}
+.legend-container ul li {
+  min-width: fit-content;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #192a3e;
+}
+.legend-container > div .yellow {
+  background-image: url(./ASSETS/images/deals-graph/Ellipse\ yellow.svg);
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 1rem;
+}
+.legend-container > div .green {
+  background-image: url(./ASSETS/images/deals-graph/Ellipse\ green.svg);
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 1rem;
+}
+.legend-container > div .red {
+  background-image: url(./ASSETS/images/deals-graph/Ellipse\ red.svg);
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 1rem;
+}
+
+
+/*----------------HOVERS----------------------*/
+
+
+.card:hover{
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.show-more-item:hover{
+  text-decoration: underline #109CF1;
+  cursor: pointer;
+}
+.calendar-container .calendar-item .date p:hover{
+  background-color: #109CF1;
+  border-radius: 50%;
+  color: white;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+.card.card:hover span{
+  display: block;
+}
+
+.main-graphs-container span:hover{
+  cursor: pointer;
+  font-weight: 600;
+}
+.main-tasks-container .completed-container span:hover{
+  cursor: pointer;
+  font-weight: 600;
+}
+.main-search-container .bell-icon:hover{
+  cursor: pointer;
+}
+
+
+
+@media (min-width: 800px) {
+  .app-wrapper{
+    height: 100vh;
+  }
+  
+  .main-tasks-wrapper{
+    max-height: 100%;
+  }
+  .tasks-graphs--container {
+
+    flex-direction: row;
+  }
+  .main-search-container {
+    margin-bottom: 1.5rem;
+    max-height: 10%;
+  }
+  .main-graphs-container {
+    width: 50%;
+    max-height: 95%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    background-color: #F5F6F8;
+    border-radius: 4px;
+  }
+  .main-tasks-container {
+    width: 50%;
+    max-height: 95%;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  .deals-container {
+    max-height: 48%;
+    min-height: 48%;
+    margin-bottom: 1rem;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+  }
+  .deals-filter-container{
+    max-height: 10%;
+  }
+  .graph-item-container{
+    max-height: 100%;
+  }
+  .graph-item-container .graph-image{
+   max-height: 80%;
+  }
+  .graph-image img{
+    max-height: 100%;
+    /* max-width: 60rem; */
+  }
+  .graphs-container {
+    max-height: 49%;
+    min-height: 49%;
+    margin-top: 1rem;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+  }
+  .graphs-filter-container{
+    max-height: 10%;
+  }
+  .graph-item-container.percentage{
+    max-height: 90%;
+  }
+  .percentage-graph-img{
+    max-height: 100%;
+  }
+  .percentage-graph-img img{
+    max-height: 100%;
+  }
+  .cards-container{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  .calendar-container .calendar-item{
+    display: flex;
+  }
+}
+@media(min-width:1200px) {
+  .app-wrapper .main-tasks-wrapper{
+    width: 80%;
+  }
+  .app-wrapper .main-nav-wrapper{
+    display: flex;
+  }
+}
