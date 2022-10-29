@@ -27,8 +27,8 @@ body {
   flex-direction: column;
   width: 20%;
   max-height: 100%;
+  min-height: 780px;
   background-color: white;
-  /* box-shadow: 6px 0px 18px black; */
   display: none;
 } 
 .main-nav-wrapper .logo-container{
@@ -65,6 +65,7 @@ body {
 
 .side-top .info-container{
   display: flex;
+  align-items: center;
   justify-content: space-around;
   width: 100%;
   padding: 1rem;
@@ -76,14 +77,19 @@ body {
   width: 100%;
 }
 .side-top .info-container .avatar-image-container{
-  width: 25%;
+  width: 20%;
 }
 .side-top .info-container .avatar-name{
-  width: 75%;
+  width: 70%;
 }
 .avatar-name h3{
   font-size: 1.4rem;
   font-weight: 500;
+}
+.avatar-name P{
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #90A0B7;
 }
 .side-top .nav-container{
   flex-grow: 1;
@@ -151,6 +157,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+
   max-height: 90vh;
 }
 .main-tasks-container {
@@ -234,6 +241,9 @@ body {
   font-size: 1.2rem;
   font-weight: 400;
   color: #90a0b7;
+}
+.search-container input:focus{
+  outline: none;
 }
 .search-container .search-icon {
   width: 14.6px;
@@ -319,7 +329,6 @@ body {
   width: 90%;
   background-color: white;
   flex-grow: 1;
-  /* max-height: 100%; */
 }
 .main-tasks-container .card {
   margin-bottom: 2.4rem;
@@ -337,8 +346,11 @@ body {
 .card .left {
   width: 70%;
 }
-.card .righ {
+.card .right {
   width: 30%;
+  display: flex;
+  justify-content: end;
+  padding-right: 1rem;
 }
 
 .card h4 {
@@ -463,9 +475,17 @@ body {
 }
 
 .main-tasks-container .show-more-item{
+  width: 10rem;
+  position: relative;
   margin-bottom: 3rem;
+  flex-grow: 1;
+  display: none;
+  justify-content: center;
+
 }
 .show-more-item p{
+  position: absolute;
+  bottom: 0;
   font-size: 1.3rem;
   font-weight: 600;
   color: #109CF1;
@@ -676,6 +696,9 @@ body {
 .main-search-container .bell-icon:hover{
   cursor: pointer;
 }
+.main-nav-wrapper .logo-container p:hover{
+  cursor: pointer;
+}
 
 
 
@@ -686,10 +709,11 @@ body {
   
   .main-tasks-wrapper{
     max-height: 100%;
+    /* min-height: 80%; */
   }
   .tasks-graphs--container {
-
     flex-direction: row;
+    min-height: 700px;
   }
   .main-search-container {
     margin-bottom: 1.5rem;
@@ -757,6 +781,9 @@ body {
     margin-bottom: 2rem;
   }
   .calendar-container .calendar-item{
+    display: flex;
+  }
+  .main-tasks-container .show-more-item{
     display: flex;
   }
 }
